@@ -3,16 +3,14 @@ Author: "Will Stevens" <wstevens@cloudops.com>
 Dependencies
 ============
 
-python-swiftclient
-------------------
+### python-swiftclient
 ``` bash
 $ git clone https://github.com/openstack/python-swiftclient
 $ cd python-swiftclient
 $ python setup.py install
 ```
 
-boto
-----
+### boto
 ``` bash
 $ pip install boto
 ```
