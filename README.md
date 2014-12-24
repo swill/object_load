@@ -37,11 +37,11 @@ By default this script creates and uses a container name of `global_unique_bucke
 Getting Started
 ===============
 
-- run the `generate_files_*.sh` script associated with the OS you will be running this test from (it will populate the upload directory)
-- configure `connections` in the `config.py` settings file.
-- configure `test_cases` in the `config.py` settings file to determine which endpoints to hit with what size files and how many batches to run.
-- run `run.py` to populate the `logs` and `downloads` directories.
-- run `parse.py` to generate and html file with graphs of the results in `html/index.html`.
+- Run `./generate_files_*.sh` according to the OS you will be running this test from, which will populate the upload directory.
+- Configure `connections` in the `config.py` settings file.
+- Configure `test_cases` in the `config.py` settings file to determine which endpoints to hit with what size files and how many batches to run.
+- Run `./run.py` to populate the `logs` and `downloads` directories.
+- Run `./parse.py` to generate and html file with graphs of the results in `html/index.html`.
 
 
 Files Overview
