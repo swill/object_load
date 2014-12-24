@@ -6,9 +6,9 @@ Dependencies
 python-swiftclient
 ------------------
 ``` bash
-$ git clone https://github.com/openstack/python-swiftclient  
-$ cd python-swiftclient  
-$ python setup.py install  
+$ git clone https://github.com/openstack/python-swiftclient
+$ cd python-swiftclient
+$ python setup.py install
 ```
 
 boto
@@ -23,11 +23,11 @@ Project Summary
 
 Test the performance of different object storage solutions.  Run tests against either or both a Swift API and a S3 API.  If you run tests against both the Swift and S3 APIs for a specific provider, the average performance graphs will include both the Swift and S3 performance on a single graph for easy comparison.
 
-The `./run.py` script will create a new container and upload files into it.  Then it will download those files and delete them from the object store.  Each of these operations are timed and the results are logged in the `logs` directory.
+The **`./run.py`** script will create a new container and upload files into it.  Then it will download those files and delete them from the object store.  Each of these operations are timed and the results are logged in the `logs` directory.
 
-The `./parse.py` script uses the logs as input and generates an html file (`html/index.html`) with graphs of the results.
+The **`./parse.py`** script uses the logs as input and generates an html file (`html/index.html`) with graphs of the results.
 
-The `./clean.py` script is used if there are any errors during the run of the `run.py` script and files get left on the object store.  Running that script will remove anything that remains on the object store that was created by the `run.py` script.
+The **`./clean.py`** script is used if there are any errors during the run of the `run.py` script and files get left on the object store.  Running that script will remove anything that remains on the object store that was created by the `run.py` script.
 
 This utility is completely non-destructive so it will not interact with the objects already on the object store and it will not leave objects or containers on the object store when it finishes.  That being said, if there are errors in execution it is possible that it could leave objects on the object store.  If this happens run the `./clean.py` file and it will clean up anything left over after the error.
 
