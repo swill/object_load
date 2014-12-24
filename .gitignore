@@ -1,0 +1,6 @@
+*.pyc
+assets/*
+downloads/*
+uploads/*
+html/*
+logs/*
