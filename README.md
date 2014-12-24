@@ -61,7 +61,7 @@ This is the main configuration file which is used by all the executable scripts.
 - **connections**: A dictionary of connection configurations for different object storage providers.
 - **test_cases**: A list of test case dictionaries which outline the parameters of the tests you want to run.
 - **column_width**: The width of the provider column in the graphed output.  Use this to adjust the width of the output page.
-- **unique_container_name**: The name of the container that the test should use.  Careful, this container will be removed.  It will be created by the script, so you do not have to setup anything, just make sure it is set to something that DOES NOT already exist on your object storage account.
+- **unique_container_name**: The name of the container that the test should use.  *Careful*, this container will be removed.  It will be created by the script, so you do not have to setup anything, just make sure it is set to something that DOES NOT already exist on your object storage account.
 
 
 ### `./run.py`
