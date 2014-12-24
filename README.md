@@ -5,13 +5,17 @@ Dependencies
 
 python-swiftclient
 ------------------
-$ git clone https://github.com/openstack/python-swiftclient
-$ cd python-swiftclient
-$ python setup.py install
+``` bash
+$ git clone https://github.com/openstack/python-swiftclient  
+$ cd python-swiftclient  
+$ python setup.py install  
+```
 
 boto
 ----
+``` bash
 $ pip install boto
+```
 
 
 Project Summary
