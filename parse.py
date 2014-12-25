@@ -140,15 +140,15 @@ if __name__ == "__main__":
                         provider_code, run)
 
                     js = js + '\n' + '//'+test_case['provider']+' '+run # output a JS comment
-                    js = js + '\n' + provider_code+'_'+'_'.join(test_case['apis'])+'_'+run+'_upload = '+repr(parser.graph_data(test_case['apis'], op='upload', size_unit=size_mapping[run]))+';'
+                    js = js + '\n' + provider_code+'_'+'_'.join(sorted(test_case['apis']))+'_'+run+'_upload = '+repr(parser.graph_data(test_case['apis'], op='upload', size_unit=size_mapping[run]))+';'
                     js = js + '\n' + draw_api_comparison(test_case['provider'], run, size_mapping[run], 'upload', run_obj['max_graph_time'], column_width)
                     js = js + '\n'
                     
-                    js = js + '\n' + provider_code+'_'+'_'.join(test_case['apis'])+'_'+run+'_download = '+repr(parser.graph_data(test_case['apis'], op='download', size_unit=size_mapping[run]))+';'
+                    js = js + '\n' + provider_code+'_'+'_'.join(sorted(test_case['apis']))+'_'+run+'_download = '+repr(parser.graph_data(test_case['apis'], op='download', size_unit=size_mapping[run]))+';'
                     js = js + '\n' + draw_api_comparison(test_case['provider'], run, size_mapping[run], 'download', run_obj['max_graph_time'], column_width)
                     js = js + '\n'
                     
-                    for api in test_case['apis']: # build the runs data
+                    for api in sorted(test_case['apis']): # build the runs data
                         up_runs[run] = up_runs[run] + '\n' + '<div id="%s_%s_%s_upload_runs" class="runs-graph"></div>' % (
                             provider_code, api, run)
                         js = js + '\n' + provider_code+'_'+api+'_'+run+'_upload_runs = '+repr(parser.graph_data([api], op='upload', size_unit=size_mapping[run]))+';'

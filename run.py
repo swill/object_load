@@ -38,15 +38,21 @@ def s3_api(provider, connection, directories, test_cases, bucket_name='global_un
             with open(directories['logs']+'/'+provider+'_s3_'+test_case['directory']+'.log', 'a') as time_log:
                 # identify the use case we are testing
                 time_log.write(":using the s3 api on "+provider+" for directory "+uploads_path+"\n")
+                args = {
+                    'host':connection['host'], 
+                    'aws_access_key_id':connection['access_key'],
+                    'aws_secret_access_key':connection['secret_key'],
+                    'is_secure':False,
+                    'calling_format':boto.s3.connection.OrdinaryCallingFormat()
+                }
+                if 'port' in connection:
+                    args['port'] = connection['port']
+                if 'is_secure' in connection:
+                    args['is_secure'] = connection['is_secure']
         
                 # create connection
                 start = time.time()
-                conn = boto.connect_s3(
-                    host = connection['host'],
-                    aws_access_key_id = connection['access_key'],
-                    aws_secret_access_key = connection['secret_key'],
-                    calling_format = boto.s3.connection.OrdinaryCallingFormat()
-                )
+                conn = boto.connect_s3(**args)
                 total = time.time()-start
                 time_array.append(total)
                 time_log.write("{0:.4f}".format(total).ljust(12)+":create connection\n")
