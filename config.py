@@ -4,11 +4,12 @@ connections = {
     #'DreamHost': {
     #    's3': {
     #        'host':'objects.dreamhost.com',
+    #        'port':8080,
     #        'access_key':'xxxxxxxxxxxxxxxxxxxx', 
     #        'secret_key':'xxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxx'
     #    },
     #    'swift': {
-    #        'auth_url':'https://objects.dreamhost.com/auth',
+    #        'auth_url':'https://objects.dreamhost.com:8080/auth',
     #        'username':'user:user',
     #        'api_key':'xxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxx'
     #    }
@@ -43,7 +44,7 @@ test_cases = [
     #}
 ]
 
-column_width = 325 # the column width in pixels in the `html/index.html` file.
+column_width = 550 # the column width in pixels in the `html/index.html` file.
 unique_container_name = 'global_unique_bucket_name' # this is the default.  this container will be removed after execution.
 
 # appending a hash to the end of the bucket name to make it harder for it to collide with any container in your environment...
