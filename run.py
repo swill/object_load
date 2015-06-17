@@ -155,11 +155,7 @@ def swift_api(provider, connection, directories, test_cases, bucket_name='global
         
                 # create connection
                 start = time.time()
-                conn = swiftclient.client.Connection(
-                    authurl=connection['auth_url'],
-                    user=connection['username'],
-                    key=connection['api_key']
-                )
+                conn = swiftclient.client.Connection(**connection)
                 total = time.time()-start
                 time_array.append(total)
                 time_log.write("{0:.4f}".format(total).ljust(12)+":create connection\n")

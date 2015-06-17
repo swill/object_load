@@ -1,5 +1,7 @@
 # setup the different connections you want to test.  
 # if you change the name of the connections, change the provider name in the test cases...
+# learn more about the `swift` connection details at the following url:
+#  http://docs.openstack.org/developer/python-swiftclient/swiftclient.html#module-swiftclient.client
 connections = {
     #'DreamHost': {
     #    's3': {
@@ -9,9 +11,11 @@ connections = {
     #        'secret_key':'xxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxx'
     #    },
     #    'swift': {
-    #        'auth_url':'https://objects.dreamhost.com:8080/auth',
-    #        'username':'user:user',
-    #        'api_key':'xxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxx'
+    #        'authurl':'https://objects.dreamhost.com:8080/auth',
+    #        'user':'tenant:user',
+    #        'key':'xxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxx',
+    #        #'tenant_name':'tentant', # remove the tenant from the 'user' if you use this
+    #        #'auth_version':'2'
     #    }
     #},
     #'AWS': {
@@ -30,16 +34,16 @@ test_cases = [
     #    'provider':'DreamHost',
     #    'apis': ['s3', 'swift'],
     #    'runs': [
-    #        {'directory':'small', 'batch_size':0, 'max_graph_time':1},
-    #        {'directory':'medium', 'batch_size':5, 'max_graph_time':100}
+    #        {'directory':'small', 'batch_size':3, 'max_graph_time':1},
+    #        {'directory':'medium', 'batch_size':1, 'max_graph_time':100}
     #    ]
     #},
     #{
     #    'provider':'AWS',
     #    'apis': ['s3'],
     #    'runs': [
-    #        {'directory':'small', 'batch_size':0, 'max_graph_time':1},
-    #        {'directory':'medium', 'batch_size':5, 'max_graph_time':100}
+    #        {'directory':'small', 'batch_size':3, 'max_graph_time':1},
+    #        {'directory':'medium', 'batch_size':1, 'max_graph_time':100}
     #    ]
     #}
 ]

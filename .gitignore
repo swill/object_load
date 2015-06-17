@@ -4,3 +4,4 @@ downloads/*
 uploads/*
 html/*
 logs/*
+config_local.py

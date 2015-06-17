@@ -40,12 +40,7 @@ def s3_api(provider, connection, bucket_name='global_unique_bucket_name'):
                 
                 
 def swift_api(provider, connection, bucket_name='global_unique_bucket_name'):
-    conn = swiftclient.client.Connection(
-        authurl=connection['auth_url'],
-        user=connection['username'],
-        key=connection['api_key']
-    )
-
+    conn = swiftclient.client.Connection(**connection)
     try:
         # remove the objects from the bucket
         for obj in conn.get_container(bucket_name)[1]:

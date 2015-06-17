@@ -5,9 +5,17 @@ Dependencies
 
 ### python-swiftclient
 ``` bash
-$ git clone https://github.com/openstack/python-swiftclient
+$ git clone https://github.com/openstack/python-swiftclient.git
 $ cd python-swiftclient
 $ python setup.py install
+```
+
+### python-keystoneclient
+NOTE: This is only needed if you are using `auth_version > 1`
+``` bash
+$ git clone https://github.com/openstack/python-keystoneclient.git
+$ cd python-keystoneclient
+$ pip install -r requirements.txt && python setup.py install
 ```
 
 ### boto
